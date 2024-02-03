@@ -51,8 +51,6 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":domain"))
 
-    implementation ("com.squareup.picasso:picasso:2.71828")
-
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
     implementation(Libs.UI.material)

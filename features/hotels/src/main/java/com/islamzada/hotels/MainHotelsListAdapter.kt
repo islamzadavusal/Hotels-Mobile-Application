@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.islamzada.entities.uimodel.HotelUIModel
 import com.islamzada.hotels.databinding.HotelListItemBinding
-import com.squareup.picasso.Picasso
-
 
 class MainHotelsListAdapter : RecyclerView.Adapter<MainListViewHolder>() {
 
@@ -61,8 +59,6 @@ class MainListViewHolder(private val binding : HotelListItemBinding) : RecyclerV
     fun bind(model: HotelUIModel){
 
         binding.txtTitle.text = model.name
-
-//        Picasso.get().load(model.thumbnailImage).into(binding.imageView)
 
         Glide.with(binding.root)
             .load(model.image)
