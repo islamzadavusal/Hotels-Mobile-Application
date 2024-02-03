@@ -65,7 +65,7 @@ class MainListViewHolder(private val binding : HotelListItemBinding) : RecyclerV
 //        Picasso.get().load(model.thumbnailImage).into(binding.imageView)
 
         Glide.with(binding.root)
-            .load(model.thumbnailImage)
+            .load(model.image)
             .into(binding.imageView)
 
     }

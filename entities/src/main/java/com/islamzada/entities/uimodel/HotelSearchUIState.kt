@@ -22,6 +22,7 @@ data class HotelUIModel(
     val checkOutTime: String,
     val cityCenterPointDistance: Double,
     val cityCenterPointDistanceName: String,
+    val image: String,
     val thumbnailImage: String,
     val roomUIModels: List<RoomUIModel>,
     val cached: Boolean,
