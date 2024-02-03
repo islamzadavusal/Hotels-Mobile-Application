@@ -4,5 +4,4 @@ plugins {
     id(Plugins.jetBrainsKotlin) version Versions.jetbrainsKotlinAndroid apply false
     id(Plugins.library) version Versions.library apply false
     id(Plugins.safeArgs) version Versions.safeArgs apply false
-    id(Classpath.hilt) version Versions.hilt apply false
-}
+    id(Classpath.hilt) version Versions.hilt apply false }
