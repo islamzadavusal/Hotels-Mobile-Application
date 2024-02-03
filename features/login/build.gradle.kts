@@ -1,22 +1,19 @@
 plugins {
-    id(Plugins.androidApplication)
+    id(Plugins.library)
     id(Plugins.jetBrainsKotlin)
-    id(Plugins.hilt)
     id(Plugins.kotlinKapt)
+    id(Plugins.hilt)
 }
 
 android {
-    namespace = "com.islamzada.hotelsapplication"
+    namespace = "com.islamzada.login"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.islamzada.hotelsapplication"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -28,6 +25,12 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,10 +42,6 @@ android {
 
 dependencies {
 
-    implementation(project(":features:hotels"))
-    implementation(project(":features:login"))
-
-    implementation(Libs.UI.material)
     implementation(Libs.NAV.navigationUi)
     implementation(Libs.NAV.navigationFragment)
     implementation(Libs.HILT.hilt)
@@ -51,10 +50,15 @@ dependencies {
     implementation(Libs.UI.material)
     implementation(Libs.UI.core)
     implementation(Libs.UI.combat)
-    implementation(Libs.UI.constraintlayout)
+
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    implementation("com.facebook.android:facebook-login:latest.release")
+    implementation("com.facebook.android:facebook-android-sdk:15.1.0")
 
     implementation ("com.airbnb.android:lottie:6.3.0")
-
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
