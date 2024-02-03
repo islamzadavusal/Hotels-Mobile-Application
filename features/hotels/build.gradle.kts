@@ -41,7 +41,6 @@ android {
 
 dependencies {
 
-    implementation(Libs.UI.material)
     implementation(Libs.NAV.navigationUi)
     implementation(Libs.NAV.navigationFragment)
     implementation(Libs.HILT.hilt)
