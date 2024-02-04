@@ -64,8 +64,8 @@ class MainListViewHolder(private val binding : HotelListItemBinding) : RecyclerV
 //            .load(model.image)
 //            .into(binding.imageView)
 
-        val url = "https://cdn3.enuygun.com/media/lib/uploads/image/${model.image}"
-        Glide.with(binding.root).load(url).override(500,500).into(binding.imageView)
+        val url = model.thumbnailImage.replace("/0x0", "")
+        Glide.with(binding.root).load(url).override(500, 500).into(binding.imageView)
 
 
     }
