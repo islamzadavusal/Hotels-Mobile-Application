@@ -20,6 +20,10 @@ class MainScreenFragment : BaseFragment<FragmentMainScreenBinding, MainScreenVie
 
     private lateinit var adapter : MainHotelsListAdapter
 
+    override fun mViewModel(): MainScreenViewModel {
+        return viewModel
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,11 +38,6 @@ class MainScreenFragment : BaseFragment<FragmentMainScreenBinding, MainScreenVie
             adapter.setData(it?.hotels ?: listOf())
         }
 
-    }
-
-
-    override fun mViewModel(): MainScreenViewModel {
-        return viewModel
     }
 
     private fun initRvAdapter(){

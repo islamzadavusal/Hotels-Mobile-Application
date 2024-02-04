@@ -100,11 +100,7 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
                         roomClassDescription = room.offers.firstOrNull()?.roomClass?.description ?: "",
                         imageUrl = room.images.firstOrNull()?.url ?: ""
                     )
-                },
-
-                cached = hotel.cached!!,
-                df = hotel.df!!,
-                fc = hotel.fc!!
+                }
             )
         } ?: listOf()
     }

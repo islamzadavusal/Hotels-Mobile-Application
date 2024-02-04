@@ -24,10 +24,7 @@ data class HotelUIModel(
     val cityCenterPointDistanceName: String,
     val image: String,
     val thumbnailImage: String,
-    val roomUIModels: List<RoomUIModel>,
-    val cached: Boolean,
-    val df: Boolean,
-    val fc: Boolean
+    val roomUIModels: List<RoomUIModel>
 )
 
 data class RoomUIModel(
