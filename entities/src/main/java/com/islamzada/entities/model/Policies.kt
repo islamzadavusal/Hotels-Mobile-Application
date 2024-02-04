@@ -1,16 +1,17 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Policies (
 
-  @SerializedName("checkin"              ) var checkin             : Checkin? = Checkin(),
-  @SerializedName("checkout"             ) var checkout            : String?  = null,
-  @SerializedName("instructions"         ) var instructions        : String?  = null,
-  @SerializedName("special_instructions" ) var specialInstructions : String?  = null,
-  @SerializedName("checkin_min_age"      ) var checkinMinAge       : String?  = null,
-  @SerializedName("fees"                 ) var fees                : Fees?    = Fees(),
-  @SerializedName("know_before_you_go"   ) var knowBeforeYouGo     : String?  = null
+  var checkin             : CheckIn? = CheckIn(),
+  var checkout            : String?  = null,
+  var instructions        : String?  = null,
+  var specialInstructions : String?  = null,
+  var checkinMinAge       : String?  = null,
+  var fees                : Fees?    = Fees(),
+  var knowBeforeYouGo     : String?  = null
 
-)
+) : Parcelable

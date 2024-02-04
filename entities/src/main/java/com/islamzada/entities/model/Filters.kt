@@ -1,16 +1,17 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Filters (
 
-  @SerializedName("min"   ) var min   : Min?              = Min(),
-  @SerializedName("max"   ) var max   : Max?              = Max(),
-  @SerializedName("title" ) var title : String?           = null,
-  @SerializedName("name"  ) var name  : String?           = null,
-  @SerializedName("icon"  ) var icon  : String?           = null,
-  @SerializedName("type"  ) var type  : String?           = null,
-  @SerializedName("items" ) var items : ArrayList<String> = arrayListOf()
+  var min   : Min?              = Min(),
+  var max   : Max?              = Max(),
+  var title : String?           = null,
+  var name  : String?           = null,
+  var icon  : String?           = null,
+  var type  : String?           = null,
+  var items : ArrayList<String> = arrayListOf()
 
-)
+) : Parcelable

@@ -1,10 +1,11 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class HotelOfferBonusScRate (
 
-  @SerializedName("bonusScRate" ) var bonusScRate : String? = null
+  var bonusScRate : String? = null
 
-)
+) : Parcelable

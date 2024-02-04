@@ -1,11 +1,13 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
+@Parcelize
 data class Domestic (
 
-  @SerializedName("image" ) var image : String? = null,
-  @SerializedName("index" ) var index : Int?    = null
+  var image : String? = null,
+  var index : Int?    = null
 
-)
+) : Parcelable

@@ -1,11 +1,13 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
+@Parcelize
 data class Coordinate (
 
-  @SerializedName("longitude" ) var longitude : Double? = null,
-  @SerializedName("latitude"  ) var latitude  : Double? = null
+  var longitude : Double? = null,
+  var latitude  : Double? = null
 
-)
+) : Parcelable

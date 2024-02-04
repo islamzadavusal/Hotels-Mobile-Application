@@ -1,11 +1,12 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Extra (
 
-  @SerializedName("image_count"    ) var imageCount     : Int?    = null,
-  @SerializedName("thumbnailImage" ) var thumbnailImage : String? = null
+  var imageCount     : Int?    = null,
+  var thumbnailImage : String? = null
 
-)
+) : Parcelable

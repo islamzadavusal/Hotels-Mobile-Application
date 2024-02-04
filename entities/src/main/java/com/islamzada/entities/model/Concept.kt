@@ -1,14 +1,16 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
+@Parcelize
 data class Concept (
 
-  @SerializedName("code"                 ) var code                 : String? = null,
-  @SerializedName("description"          ) var description          : String? = null,
-  @SerializedName("parentCode"           ) var parentCode           : String? = null,
-  @SerializedName("conceptIconColorCode" ) var conceptIconColorCode : String? = null,
-  @SerializedName("conceptIcon"          ) var conceptIcon          : String? = null
+  var code                 : String? = null,
+  var description          : String? = null,
+  var parentCode           : String? = null,
+  var conceptIconColorCode : String? = null,
+  var conceptIcon          : String? = null
 
-)
+) : Parcelable

@@ -1,15 +1,16 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Hotels (
 
-  @SerializedName("id"      ) var id      : Int?             = null,
-  @SerializedName("details" ) var details : Details?         = Details(),
-  @SerializedName("rooms"   ) var rooms   : ArrayList<Rooms> = arrayListOf(),
-  @SerializedName("cached"  ) var cached  : Boolean?         = null,
-  @SerializedName("df"      ) var df      : Boolean?         = null,
-  @SerializedName("fc"      ) var fc      : Boolean?         = null
+  var id      : Int?             = null,
+  var details : Details?         = Details(),
+  var rooms   : ArrayList<Rooms> = arrayListOf(),
+  var cached  : Boolean?         = null,
+  var df      : Boolean?         = null,
+  var fc      : Boolean?         = null
 
-)
+) : Parcelable

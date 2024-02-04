@@ -1,11 +1,12 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Fees (
 
-  @SerializedName("mandatory" ) var mandatory : String? = null,
-  @SerializedName("optional"  ) var optional  : String? = null
+  var mandatory : String? = null,
+  var optional  : String? = null
 
-)
+) : Parcelable

@@ -1,15 +1,16 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Max (
 
-  @SerializedName("name"     ) var name     : String? = null,
-  @SerializedName("code"     ) var code     : String? = null,
-  @SerializedName("value"    ) var value    : String? = null,
-  @SerializedName("type"     ) var type     : String? = null,
-  @SerializedName("position" ) var position : Int?    = null,
-  @SerializedName("count"    ) var count    : String? = null
+  var name     : String? = null,
+  var code     : String? = null,
+  var value    : String? = null,
+  var type     : String? = null,
+  var position : Int?    = null,
+  var count    : String? = null
 
-)
+) : Parcelable

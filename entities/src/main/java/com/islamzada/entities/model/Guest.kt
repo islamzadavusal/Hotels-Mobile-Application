@@ -1,11 +1,12 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Guest (
 
-  @SerializedName("adults"   ) var adults   : Int? = null,
-  @SerializedName("children" ) var children : Int? = null
+  var adults   : Int? = null,
+  var children : Int? = null
 
-)
+) : Parcelable

@@ -1,15 +1,17 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
+@Parcelize
 data class RoomClass (
 
-  @SerializedName("code"        ) var code        : String?  = null,
-  @SerializedName("description" ) var description : String?  = null,
-  @SerializedName("refundable"  ) var refundable  : Boolean? = null,
-  @SerializedName("promotion"   ) var promotion   : Boolean? = null,
-  @SerializedName("package"     ) var packageName : Boolean? = null,
-  @SerializedName("offer"       ) var offer       : Boolean? = null
+  var code        : String?  = null,
+  var description : String?  = null,
+  var refundable  : Boolean? = null,
+  var promotion   : Boolean? = null,
+  var packageName : Boolean? = null,
+  var offer       : Boolean? = null
 
-)
+) : Parcelable

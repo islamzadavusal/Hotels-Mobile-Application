@@ -1,11 +1,13 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
+@Parcelize
 data class City (
 
-  @SerializedName("id"   ) var id   : String? = null,
-  @SerializedName("name" ) var name : String? = null
+  var id   : String? = null,
+  var name : String? = null
 
-)
+) : Parcelable

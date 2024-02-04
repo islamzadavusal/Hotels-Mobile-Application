@@ -1,13 +1,14 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Type (
 
-  @SerializedName("id"                 ) var id                 : String? = null,
-  @SerializedName("name"               ) var name               : String? = null,
-  @SerializedName("typeCode"           ) var typeCode           : String? = null,
-  @SerializedName("characteristicCode" ) var characteristicCode : String? = null
+  var id                 : String? = null,
+  var name               : String? = null,
+  var typeCode           : String? = null,
+  var characteristicCode : String? = null
 
-)
+) : Parcelable

@@ -1,11 +1,13 @@
 package com.islamzada.entities.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
-data class Checkin (
+@Parcelize
+data class CheckIn (
 
-  @SerializedName("begin_time" ) var beginTime : String? = null,
-  @SerializedName("end_time"   ) var endTime   : String? = null
+  var beginTime : String? = null,
+  var endTime   : String? = null
 
-)
+) : Parcelable
