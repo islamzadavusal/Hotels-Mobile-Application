@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Hotels Application</string>
+    <string name="app_name">Hotels Mobile Application</string>
+
+    <string name="error_login_title">Login failed!</string>
+    <string name="error_login_detail">Check the information again.</string>
+
+    <string name="facebook_app_id">289429107484345</string>
+    <string name="fb_login_protocol_scheme">fb289429107484345</string>
+    <string name="facebook_client_token">e7d5c0257b3dfbae8445f7c099e77883</string>
+
+    <string name="google_client_id">302518643394-cg0lunlqhk5da295vq5quotc1h47qvv6.apps.googleusercontent.com</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_register_with">or Register with</string>
+    <string name="register_now">Don`t have an account ? Register Now</string>
+    <string name="do_you_have_an_account_continue_with_that_account">Do you have an account? Continue with that account</string>
+    <string name="or_login_with">or Login with</string>
+    <string name="sign_in">Sign In</string>
+
+
 </resources>

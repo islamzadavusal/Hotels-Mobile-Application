@@ -3,6 +3,8 @@ plugins {
     id(Plugins.jetBrainsKotlin)
     id(Plugins.hilt)
     id(Plugins.kotlinKapt)
+    id(Plugins.googleFirebase)
+    id(Plugins.safeArgs)
 }
 
 android {
@@ -19,15 +21,42 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
+    signingConfigs {
+        create("release") {
+            keyAlias = "key0"
+            keyPassword = "Qweasd"
+            storeFile = file("../certificates/Release")
+            storePassword = "Qweasd"
+        }
+
+        create("dev") {
+            keyAlias = "key0"
+            keyPassword = "Qweasd"
+            storeFile = file("../certificates/Debug")
+            storePassword = "Qweasd"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
+        }
+
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("dev")
         }
     }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,7 +69,7 @@ android {
 dependencies {
 
     implementation(project(":features:hotels"))
-    implementation(project(":features:login"))
+    implementation(project(":common"))
 
     implementation(Libs.UI.material)
     implementation(Libs.NAV.navigationUi)
@@ -54,6 +83,14 @@ dependencies {
     implementation(Libs.UI.constraintlayout)
 
     implementation ("com.airbnb.android:lottie:6.3.0")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    implementation("com.facebook.android:facebook-login:latest.release")
+    implementation("com.facebook.android:facebook-android-sdk:15.1.0")
 
 
     testImplementation("junit:junit:4.13.2")

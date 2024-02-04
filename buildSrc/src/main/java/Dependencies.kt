@@ -47,6 +47,7 @@ object Plugins {
     const val androidApplication = "com.android.application"
     const val jetBrainsKotlin = "org.jetbrains.kotlin.android"
     const val hilt = "dagger.hilt.android.plugin"
+    const val googleFirebase = "com.google.gms.google-services"
     const val library = "com.android.library"
     const val safeArgs = "androidx.navigation.safeargs"
     const val kotlinKapt = "kotlin-kapt"

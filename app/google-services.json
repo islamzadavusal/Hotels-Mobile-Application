@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "302518643394",
+    "project_id": "hotels-mobile-application",
+    "storage_bucket": "hotels-mobile-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302518643394:android:d72dde6562a54ed9b0695b",
+        "android_client_info": {
+          "package_name": "com.islamzada.hotelsapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302518643394-hmmpkqiiur28p5ulbn3ouhe73en4k54l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.islamzada.hotelsapplication",
+            "certificate_hash": "570f571ee47d6c3cc0fc58866a798e084eadcba6"
+          }
+        },
+        {
+          "client_id": "302518643394-npujkvls92hb2emtbncsji9q0euc6ltg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.islamzada.hotelsapplication",
+            "certificate_hash": "421e46e71cc171c00aa762a9c825be55d2aa63d3"
+          }
+        },
+        {
+          "client_id": "302518643394-cg0lunlqhk5da295vq5quotc1h47qvv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMMYbxic9P41fZRBUK6H-H0LPnaXaq100"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302518643394-cg0lunlqhk5da295vq5quotc1h47qvv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
