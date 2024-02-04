@@ -10,4 +10,5 @@
         android:name="com.islamzada.hotels.MainScreenFragment"
         android:label="fragment_main_screen"
         tools:layout="@layout/fragment_main_screen" />
+
 </navigation>
