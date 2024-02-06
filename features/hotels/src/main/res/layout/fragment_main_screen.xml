@@ -7,17 +7,108 @@
     android:background="@color/colorBackground"
     tools:context=".MainScreenFragment">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Welcome"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sortBTN"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_background"
+                android:drawableStart="@drawable/sort"
+                android:text="Sırala"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:drawablePadding="-25dp"
+                android:paddingStart="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/filterBTN"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:drawableStart="@drawable/filter"
+                android:text="Filtrele"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:drawablePadding="-12dp"
+                android:paddingStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sortBTN"
+                app:layout_constraintEnd_toStartOf="@+id/mapBTN"
+                app:layout_constraintStart_toEndOf="@+id/sortBTN"
+                app:layout_constraintTop_toTopOf="@+id/sortBTN" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mapBTN"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/button_background_map"
+                android:drawableStart="@drawable/map"
+                android:text="Harita"
+                android:drawablePadding="-15dp"
+                android:paddingStart="12dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlue"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sortBTN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/filterBTN"
+                app:layout_constraintTop_toTopOf="@+id/sortBTN" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ht"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
