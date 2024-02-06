@@ -6,7 +6,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Rooms (
-
   var reference   : String?           = null,
   var type        : Type?             = Type(),
   var images      : ArrayList<Images> = arrayListOf(),
@@ -15,5 +14,4 @@ data class Rooms (
   var information : ArrayList<String> = arrayListOf(),
   var alerts      : ArrayList<String> = arrayListOf(),
   var description : String?           = null
-
 ) : Parcelable

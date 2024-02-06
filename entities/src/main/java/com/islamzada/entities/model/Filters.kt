@@ -12,6 +12,6 @@ data class Filters (
   var name  : String?           = null,
   var icon  : String?           = null,
   var type  : String?           = null,
-  var items : ArrayList<String> = arrayListOf()
+  var items : ArrayList<Items> = arrayListOf()
 
 ) : Parcelable
