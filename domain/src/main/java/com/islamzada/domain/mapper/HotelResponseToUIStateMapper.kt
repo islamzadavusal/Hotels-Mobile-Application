@@ -81,8 +81,6 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
                 country = hotel.details?.address?.country?.name ?: "",
                 starRating = hotel.details?.starRating?.toDouble() ?: 0.0,
                 reviewScore = hotel.details?.reviewScore?.toDouble() ?: 0.0,
-                checkInTime = hotel.details?.checkInTime ?: "",
-                checkOutTime = hotel.details?.checkOutTime ?: "",
                 cityCenterPointDistance = hotel.details?.cityCenterPointDistance ?: 0.0,
                 cityCenterPointDistanceName = hotel.details?.cityCenterPointDistanceName ?: "",
                 image = hotel.details?.images?.firstOrNull()?.toString() ?: "",
