@@ -1,5 +1,6 @@
 package com.islamzada.hotels
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -56,12 +57,18 @@ class MainHotelsListAdapter : RecyclerView.Adapter<MainListViewHolder>() {
 
 class MainListViewHolder(private val binding : HotelListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+    @SuppressLint("SetTextI18n")
     fun bind(model: HotelUIModel){
 
         binding.txtTitle.text = model.name
+        binding.txtAddress.text = model.address
+        binding.txtCity.text = "${model.city}  -  ${model.country}"
+        binding.txtStartRating.text = "${model.starRating}, ${model.reviewScore}"
+        binding.txtNear.text = "${model.cityCenterPointDistanceName}  -  ${model.cityCenterPointDistance}"
+
 
                 val url = model.thumbnailImage.replace("/0x0", "")
-                Glide.with(binding.root).load(url).override(500,500).into(binding.imageView)
+                Glide.with(binding.root).load(url).into(binding.imageView)
 
     }
 }
