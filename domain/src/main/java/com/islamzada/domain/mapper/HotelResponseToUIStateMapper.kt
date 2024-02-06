@@ -4,7 +4,6 @@ import com.islamzada.entities.model.Result
 import com.islamzada.entities.uimodel.HotelSearchHeaderUIModel
 import com.islamzada.entities.uimodel.HotelSearchUIState
 import com.islamzada.entities.uimodel.HotelUIModel
-import com.islamzada.entities.uimodel.RoomUIModel
 import javax.inject.Inject
 
 //class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<HotelsResponse, HotelSearchUIState> {
@@ -87,20 +86,22 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
                 cityCenterPointDistance = hotel.details?.cityCenterPointDistance ?: 0.0,
                 cityCenterPointDistanceName = hotel.details?.cityCenterPointDistanceName ?: "",
                 image = hotel.details?.images?.firstOrNull()?.toString() ?: "",
-                thumbnailImage = hotel.details?.extra?.thumbnailImage?.firstOrNull()?.toString() ?: "",
+                thumbnailImage = hotel.details?.extra?.thumbnailImage?: ""
 
-                roomUIModels = hotel.rooms.map { room ->
-                    RoomUIModel(
-                        reference = room.reference ?: "",
-                        roomType = room.type?.name ?: "",
-                        totalCount = room.offers.firstOrNull()?.totalCount ?: 0,
-                        availableCount = room.offers.firstOrNull()?.availableCount ?: 0,
-                        price = room.offers.firstOrNull()?.price ?: 0,
-                        conceptDescription = room.offers.firstOrNull()?.concept?.description ?: "",
-                        roomClassDescription = room.offers.firstOrNull()?.roomClass?.description ?: "",
-                        imageUrl = room.images.firstOrNull()?.url ?: ""
-                    )
-                }
+//
+//                roomUIModels = hotel.rooms.map { room ->
+//                    RoomUIModel(
+//                        reference = room.reference ?: "",
+//                        roomType = room.type?.name ?: "",
+//                        totalCount = room.offers.firstOrNull()?.totalCount ?: 0,
+//                        availableCount = room.offers.firstOrNull()?.availableCount ?: 0,
+//                        price = room.offers.firstOrNull()?.price ?: 0,
+//                        conceptDescription = room.offers.firstOrNull()?.concept?.description ?: "",
+//                        roomClassDescription = room.offers.firstOrNull()?.roomClass?.description ?: "",
+//                        imageUrl = room.images.firstOrNull()?.url ?: ""
+//                    )
+            //    }
+
             )
         } ?: listOf()
     }

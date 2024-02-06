@@ -23,17 +23,18 @@ data class HotelUIModel(
     val cityCenterPointDistance: Double,
     val cityCenterPointDistanceName: String,
     val image: String,
-    val thumbnailImage: String,
-    val roomUIModels: List<RoomUIModel>
+    val thumbnailImage: String
+
+//    val roomUIModels: List<RoomUIModel>
 )
 
-data class RoomUIModel(
-    val reference: String,
-    val roomType: String,
-    val totalCount: Int,
-    val availableCount: Int,
-    val price: Int,
-    val conceptDescription: String,
-    val roomClassDescription: String,
-    val imageUrl: String
-)
+//data class RoomUIModel(
+//    val reference: String,
+//    val roomType: String,
+//    val totalCount: Int,
+//    val availableCount: Int,
+//    val price: Int,
+//    val conceptDescription: String,
+//    val roomClassDescription: String,
+//    val imageUrl: String
+//)
