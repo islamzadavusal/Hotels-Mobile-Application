@@ -5,7 +5,12 @@
     app:startDestination="@id/nav_host_hotels">
 
     <include app:graph="@navigation/nav_host_hotels">
+    </include>
 
+    <include app:graph="@navigation/nav_host_favorite">
+    </include>
+
+    <include app:graph="@navigation/nav_host_account">
     </include>
 
 </navigation>

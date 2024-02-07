@@ -42,6 +42,10 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -69,6 +73,9 @@ android {
 dependencies {
 
     implementation(project(":features:hotels"))
+    implementation(project(":features:favorite"))
+    implementation(project(":features:account"))
+
     implementation(project(":common"))
 
     implementation(Libs.UI.material)
@@ -82,16 +89,14 @@ dependencies {
     implementation(Libs.UI.combat)
     implementation(Libs.UI.constraintlayout)
 
+    implementation(platform(Libs.GoogleService.firebaseBom))
+    implementation(Libs.GoogleService.firebaseAuth)
+    implementation(Libs.GoogleService.playService)
+
     implementation ("com.airbnb.android:lottie:6.3.0")
-
-    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
-
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     implementation("com.facebook.android:facebook-login:latest.release")
     implementation("com.facebook.android:facebook-android-sdk:15.1.0")
-
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

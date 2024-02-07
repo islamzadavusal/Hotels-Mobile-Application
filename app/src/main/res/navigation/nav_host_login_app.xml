@@ -9,17 +9,9 @@
         android:id="@+id/registerFragment"
         android:name="com.islamzada.hotelsapplication.loginPage.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-        <action
-            android:id="@+id/registerToLogin"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.islamzada.hotelsapplication.loginPage.LoginFragment"
-        android:label="LoginFragment" >
-        <action
-            android:id="@+id/loginToRegister"
-            app:destination="@id/registerFragment" />
-    </fragment>
+        android:label="LoginFragment" />
 </navigation>

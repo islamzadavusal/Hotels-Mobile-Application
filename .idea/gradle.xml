@@ -27,6 +27,7 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/entities" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/account" />
             <option value="$PROJECT_DIR$/features/favorite" />
             <option value="$PROJECT_DIR$/features/hotels" />
             <option value="$PROJECT_DIR$/network" />

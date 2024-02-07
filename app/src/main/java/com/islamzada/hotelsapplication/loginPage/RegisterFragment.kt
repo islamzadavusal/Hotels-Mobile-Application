@@ -29,6 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.islamzada.common.util.ErrorMessage
 import com.islamzada.common.util.showMessage
+import com.islamzada.hotelsapplication.LoginActivity
 import com.islamzada.hotelsapplication.MainActivity
 import com.islamzada.hotelsapplication.R
 import com.islamzada.hotelsapplication.databinding.FragmentRegisterBinding
@@ -56,8 +57,7 @@ class RegisterFragment : Fragment() {
         binding = FragmentRegisterBinding.inflate(inflater)
 
         binding.textViewLoginNow.setOnClickListener {
-            val action = RegisterFragmentDirections.registerToLogin()
-            findNavController().navigate(action)
+           openLogin()
         }
 
         binding.facebookRegisterButton.setOnClickListener {
@@ -222,6 +222,10 @@ class RegisterFragment : Fragment() {
         val intent = Intent(requireActivity(), MainActivity::class.java)
         requireActivity().finish()
         startActivity(intent)
+    }
+
+    private fun openLogin() {
+        (requireActivity() as LoginActivity).registerToLogin()
     }
 
 }

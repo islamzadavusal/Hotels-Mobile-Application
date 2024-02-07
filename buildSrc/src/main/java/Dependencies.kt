@@ -2,6 +2,7 @@ object Versions {
     const val androidApplication = "8.2.2"
     const val jetbrainsKotlinAndroid = "1.9.22"
     const val library = "8.2.2"
+    const val googleService = "4.4.0"
     const val safeArgs = "2.7.3"
     const val materialComponents = "1.11.0"
     const val core = "1.12.0"
@@ -14,6 +15,9 @@ object Versions {
     const val okhttpLogging = "4.10.0"
     const val okhttp = "5.0.0-alpha.3"
     const val gson = "2.10.1"
+
+    const val firebaseBom = "32.7.0"
+    const val playService = "20.7.0"
 }
 
 object Libs {
@@ -35,6 +39,12 @@ object Libs {
     object HILT {
         const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
         const val hiltKapt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    }
+
+    object GoogleService {
+        const val firebaseAuth = "com.google.firebase:firebase-auth"
+        const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
+        const val playService = "com.google.android.gms:play-services-auth:${Versions.playService}"
     }
 
     object NAV {

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import com.islamzada.hotelsapplication.loginPage.LoginFragment
+import com.islamzada.hotelsapplication.loginPage.RegisterFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,4 +30,19 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
     }
+
+    // Giriş (Login) fragmentine geçiş yapmak için
+    fun loginToRegister() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.navigationApp, RegisterFragment())
+            .commit()
+    }
+
+    // Kayıt (Register) fragmentine geçiş yapmak için
+    fun registerToLogin() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.navigationApp, LoginFragment())
+            .commit()
+    }
+
 }

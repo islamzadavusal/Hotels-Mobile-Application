@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:cardCornerRadius="15dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +28,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txt_title"
@@ -48,12 +49,12 @@
             <ImageButton
                 android:id="@+id/imageButtonFav"
                 android:layout_width="wrap_content"
-                android:backgroundTint="#EFF3F2"
                 android:layout_height="40dp"
                 android:layout_marginEnd="10dp"
+                android:backgroundTint="#EFF3F2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/txt_title"
-                app:srcCompat="@drawable/favorite" />
+                app:srcCompat="@drawable/favorite_card" />
 
             <ImageView
                 android:id="@+id/imageViewAddress"
@@ -94,8 +95,8 @@
                 android:id="@+id/txt_city"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="CITY"
                 android:layout_marginHorizontal="10dp"
+                android:text="CITY"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -108,8 +109,8 @@
                 android:id="@+id/imageViewNear"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="10dp"
                 android:layout_marginVertical="15dp"
+                android:layout_marginStart="10dp"
                 android:src="@drawable/near_location"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -132,8 +133,8 @@
                 android:id="@+id/imageViewRate"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="15dp"
                 android:src="@drawable/rate"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewNear"
                 app:layout_constraintEnd_toStartOf="@+id/txt_startRating"
@@ -151,8 +152,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewRate"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageViewRate" />
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.islamzada.common.util.ErrorMessage
 import com.islamzada.common.util.showMessage
+import com.islamzada.hotelsapplication.LoginActivity
 import com.islamzada.hotelsapplication.MainActivity
 import com.islamzada.hotelsapplication.R
 import com.islamzada.hotelsapplication.databinding.FragmentLoginBinding
@@ -57,8 +58,7 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater)
 
         binding.textViewRegisterNow.setOnClickListener {
-            val action = LoginFragmentDirections.loginToRegister()
-            findNavController().navigate(action)
+           openRegister()
         }
 
         binding.facebookLoginButton.setOnClickListener {
@@ -90,7 +90,7 @@ class LoginFragment : Fragment() {
         }
 
         val firebaseAuth = Firebase.auth
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 openMain()
             }.addOnFailureListener { exception ->
@@ -223,6 +223,10 @@ class LoginFragment : Fragment() {
         val intent = Intent(requireActivity(), MainActivity::class.java)
         requireActivity().finish()
         startActivity(intent)
+    }
+
+    private fun openRegister() {
+        (requireActivity() as LoginActivity).loginToRegister()
     }
 
 }
