@@ -3,6 +3,8 @@ plugins {
     id(Plugins.jetBrainsKotlin)
     id(Plugins.kotlinKapt)
     id(Plugins.hilt)
+    id(Plugins.googleFirebase)
+
 }
 
 android {
@@ -14,6 +16,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -41,9 +47,22 @@ dependencies {
     implementation(Libs.HILT.hilt)
     kapt(Libs.HILT.hiltKapt)
 
+    implementation(project(":entities"))
+    implementation(project(":common"))
+    implementation(project(":domain"))
+
     implementation(Libs.UI.material)
     implementation(Libs.UI.core)
     implementation(Libs.UI.combat)
+
+    implementation(platform(Libs.GoogleService.firebaseBom))
+    implementation(Libs.GoogleService.firebaseAuth)
+    implementation(Libs.GoogleService.playService)
+
+    implementation ("com.google.firebase:firebase-firestore")
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

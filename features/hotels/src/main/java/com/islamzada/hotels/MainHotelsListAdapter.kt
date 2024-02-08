@@ -1,12 +1,17 @@
 package com.islamzada.hotels
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.islamzada.entities.uimodel.HotelUIModel
 import com.islamzada.hotels.databinding.HotelListItemBinding
 
@@ -31,11 +36,12 @@ class MainHotelsListAdapter : RecyclerView.Adapter<MainListViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MainListViewHolder, position: Int) {
+        val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
         differ.currentList.getOrNull(position)?.let {
-            holder.bind(it)
+            holder.bind(it, currentUserUid)
         }
-
     }
+
 
 
     companion object {
@@ -55,10 +61,10 @@ class MainHotelsListAdapter : RecyclerView.Adapter<MainListViewHolder>() {
 }
 
 
-class MainListViewHolder(private val binding : HotelListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     @SuppressLint("SetTextI18n")
-    fun bind(model: HotelUIModel){
+    fun bind(model: HotelUIModel, currentUserUid: String?) {
 
         binding.txtTitle.text = model.name
         binding.txtAddress.text = model.address
@@ -66,9 +72,47 @@ class MainListViewHolder(private val binding : HotelListItemBinding) : RecyclerV
         binding.txtStartRating.text = "${model.starRating}, ${model.reviewScore}"
         binding.txtNear.text = "${model.cityCenterPointDistanceName}  -  ${model.cityCenterPointDistance}"
 
+        val url = model.thumbnailImage.replace("/0x0", "")
+        Glide.with(binding.root).load(url).into(binding.imageView)
 
-                val url = model.thumbnailImage.replace("/0x0", "")
-                Glide.with(binding.root).load(url).into(binding.imageView)
 
+            // ADD DATA TO FIREBASE
+
+        binding.imageButtonFav.setOnClickListener {
+
+            val db = Firebase.firestore
+
+            val data = hashMapOf(
+                "id" to model.id,
+                "name" to model.name,
+                "address" to model.address,
+                "city" to model.city,
+                "country" to model.country,
+                "starRating" to model.starRating,
+                "reviewScore" to model.reviewScore,
+                "cityCenterPointDistanceName" to model.cityCenterPointDistanceName,
+                "cityCenterPointDistance" to model.cityCenterPointDistance,
+                "thumbnailImage" to model.thumbnailImage
+            )
+
+            val currentUserUID = FirebaseAuth.getInstance().currentUser?.uid
+
+            currentUserUID?.let { uid ->
+                    db.collection("users").document(uid)
+                    .collection("currentUser")
+                    .document("userData")
+                    .set(data)
+
+                    .addOnSuccessListener {
+                        Log.d(TAG, "Success")
+                    }
+
+                    .addOnFailureListener { exception ->
+                        Log.w(TAG, "Error", exception)
+                    }
+            }
+        }
     }
+
+
 }

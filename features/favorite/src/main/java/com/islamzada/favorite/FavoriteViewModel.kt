@@ -1,4 +1,6 @@
 package com.islamzada.favorite
 
-class FavoriteViewModel {
+import androidx.lifecycle.ViewModel
+
+class FavoriteViewModel : ViewModel() {
 }
