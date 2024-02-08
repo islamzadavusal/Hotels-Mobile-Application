@@ -98,10 +98,9 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
             val currentUserUID = FirebaseAuth.getInstance().currentUser?.uid
 
             currentUserUID?.let { uid ->
-                    db.collection("users").document(uid)
+                db.collection("users").document(uid)
                     .collection("currentUser")
-                    .document("userData")
-                    .set(data)
+                    .add(data)
 
                     .addOnSuccessListener {
                         Log.d(TAG, "Success")
@@ -113,6 +112,4 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
             }
         }
     }
-
-
 }
