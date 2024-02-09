@@ -34,14 +34,14 @@ class LoginActivity : AppCompatActivity() {
     // Giriş (Login) fragmentine geçiş yapmak için
     fun loginToRegister() {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.navigationApp, RegisterFragment())
+            .replace(R.id.navHostLogin, RegisterFragment())
             .commit()
     }
 
     // Kayıt (Register) fragmentine geçiş yapmak için
     fun registerToLogin() {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.navigationApp, LoginFragment())
+            .replace(R.id.navHostLogin, LoginFragment())
             .commit()
     }
 
