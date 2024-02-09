@@ -58,12 +58,12 @@ class FavListViewHolder(private val binding: FavListItemBinding) : RecyclerView.
             txtTitle.text = model.name
             txtAddress.text = model.address
             txtPrice.text = "${model.price} ₺"
-            txtCity.text = "${model.city} - ${model.country}"
-            txtStartRating.text = "${model.starRating}, ${model.reviewScore}"
-            txtNear.text = "${model.cityCenterPointDistanceName} - ${model.cityCenterPointDistance}"
+            txtCity.text = "${model.city} ,  ${model.country}"
+            txtStartRating.text = "${model.reviewScore}".replace(".", ",")
+            txtNear.text = "merkezine ${model.cityCenterPointDistance} km"
 
             val url = model.thumbnailImage.replace("/0x0", "")
-            Glide.with(binding.root).load(url).into(binding.imageView)
+            Glide.with(binding.root).load(url).into(imageView)
 
         }
 

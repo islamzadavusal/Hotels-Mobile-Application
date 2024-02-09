@@ -11,8 +11,6 @@ data class FavoriteData (
     var city: String = "",
     var country: String = "",
     var thumbnailImage: String = "",
-    var starRating: Double = 0.0,
     var reviewScore: Double = 0.0,
-    var cityCenterPointDistanceName: String = "",
     var cityCenterPointDistance: Double = 0.0
 ) : Parcelable

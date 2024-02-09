@@ -16,10 +16,8 @@ data class HotelUIModel(
     val address: String,
     val city: String,
     val country: String,
-    val starRating: Double,
     val reviewScore: Double,
     val cityCenterPointDistance: Double,
-    val cityCenterPointDistanceName: String,
     val image: String,
     val thumbnailImage: String,
     val price: Int

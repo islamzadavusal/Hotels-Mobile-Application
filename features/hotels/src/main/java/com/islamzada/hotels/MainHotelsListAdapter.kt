@@ -69,9 +69,9 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
         binding.txtTitle.text = model.name
         binding.txtAddress.text = model.address
         binding.txtPrice.text = "${model.price} ₺"
-        binding.txtCity.text = "${model.city}  -  ${model.country}"
-        binding.txtStartRating.text = "${model.starRating}, ${model.reviewScore}"
-        binding.txtNear.text = "${model.cityCenterPointDistanceName}  -  ${model.cityCenterPointDistance}"
+        binding.txtCity.text = "${model.city} ,  ${model.country}"
+        binding.txtStartRating.text = "${model.reviewScore}".replace(".", ",")
+        binding.txtNear.text = "merkezine ${model.cityCenterPointDistance} km"
 
         val url = model.thumbnailImage.replace("/0x0", "")
         Glide.with(binding.root).load(url).into(binding.imageView)
@@ -89,9 +89,7 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
                 "address" to model.address,
                 "city" to model.city,
                 "country" to model.country,
-                "starRating" to model.starRating,
                 "reviewScore" to model.reviewScore,
-                "cityCenterPointDistanceName" to model.cityCenterPointDistanceName,
                 "cityCenterPointDistance" to model.cityCenterPointDistance,
                 "thumbnailImage" to model.thumbnailImage,
                 "price" to model.price
