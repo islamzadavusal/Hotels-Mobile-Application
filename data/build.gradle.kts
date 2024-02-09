@@ -3,6 +3,7 @@ plugins {
     id(Plugins.jetBrainsKotlin)
     id(Plugins.kotlinKapt)
     id(Plugins.hilt)
+    id(Plugins.googleFirebase)
 }
 
 android {
@@ -41,6 +42,12 @@ dependencies {
 
     implementation(Libs.HILT.hilt)
     kapt(Libs.HILT.hiltKapt)
+
+
+    implementation(platform(Libs.GoogleService.firebaseBom))
+    implementation(Libs.GoogleService.firebaseAuth)
+    implementation(Libs.GoogleService.playService)
+    implementation ("com.google.firebase:firebase-firestore")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

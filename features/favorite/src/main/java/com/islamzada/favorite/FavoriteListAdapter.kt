@@ -17,6 +17,9 @@ class FavoriteListAdapter : RecyclerView.Adapter<FavListViewHolder>() {
 
     private val differ = AsyncListDiffer(this, differCallBack)
 
+    fun setData(items: List<HotelUIModel>){
+        differ.submitList(items)
+    }
 
     override fun getItemCount(): Int {
         return differ.currentList.size

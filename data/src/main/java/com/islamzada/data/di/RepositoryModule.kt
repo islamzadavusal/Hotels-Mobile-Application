@@ -15,4 +15,10 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun providerHotelsRepository(repository: HotelsRepository) : HotelsRepositoryInterface
+
+//    @Binds
+//    @Singleton
+//    abstract fun bindFavRepository(idf : FavoriteRepository) : FavoriteRepositoryInterface
+
+
 }

@@ -1,5 +1,8 @@
 package com.islamzada.network.di
 
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.islamzada.network.api.ApiService
 import dagger.Module
@@ -40,6 +43,12 @@ object ServiceModule {
     fun providerApiService(@HotelsAnnotation retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
+//    @Singleton
+//    @Provides
+//    fun provideFireStore() : FirebaseFirestore {
+//        return Firebase.firestore
+//    }
 
     @Provides
     @Singleton
