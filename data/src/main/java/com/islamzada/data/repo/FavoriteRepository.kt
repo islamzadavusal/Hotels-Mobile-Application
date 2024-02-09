@@ -2,7 +2,11 @@ package com.islamzada.data.repo
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.islamzada.entities.model.FavoriteData
 import com.islamzada.entities.model.HotelsResponse
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
@@ -72,39 +76,40 @@ import javax.inject.Inject
 //    data class Error(val exception: Exception) : Resource<Nothing>()
 //}
 
-//interface FavoriteRepositoryInterface {
-//    suspend fun getAll(): Flow<List<HotelsResponse>>
-//}
-//
-//class FavoriteRepository @Inject constructor(private val database: FirebaseFirestore) : FavoriteRepositoryInterface {
-//    override suspend fun getAll(): Flow<List<HotelsResponse>> = callbackFlow {
-//        val collection = database.collection("users")
-//        val currentUserUID = FirebaseAuth.getInstance().currentUser?.uid
-//
-//        currentUserUID?.let { uid ->
-//            collection.document(uid)
-//                .collection("currentUser")
-//                .get()
-//                .addOnSuccessListener { querySnapshot ->
-//                    val tempList = mutableListOf<HotelsResponse>()
-//                    for (document in querySnapshot.documents) {
-//                        val fav = document.toObject(HotelsResponse::class.java)
-//                        fav?.let {
-//                            tempList.add(it) }
-//                    }
-//
-//                    trySend(tempList).isSuccess
-//                }
-//                .addOnFailureListener { exception ->
-//                    close(exception)
-//                }
-//
-//            awaitClose {
-//
-//            }
-//        }
-//    }
-//}
+interface FavoriteRepositoryInterface {
+    suspend fun getAll(): Flow<List<FavoriteData>>
+}
+
+class FavoriteRepository @Inject constructor(private val database: FirebaseFirestore) : FavoriteRepositoryInterface {
+    override suspend fun getAll(): Flow<List<FavoriteData>> = callbackFlow {
+        val collection = database.collection("users")
+        val currentUserUID = FirebaseAuth.getInstance().currentUser?.uid
+
+        currentUserUID?.let { uid ->
+            collection.document(uid)
+                .collection("currentUser")
+                .get()
+                .addOnSuccessListener {
+
+                    val tempList = mutableListOf<FavoriteData>()
+                    for (document in it) {
+                        val fav = document.toObject(FavoriteData::class.java)
+                            tempList.add(fav)
+
+                    }
+
+                    trySend(tempList).isSuccess
+                }
+                .addOnFailureListener { exception ->
+                    close(exception)
+                }
+
+            awaitClose {
+
+            }
+        }
+    }
+}
 
 //
 //interface FavoriteRepositoryInterface {

@@ -1,5 +1,7 @@
 package com.islamzada.data.di
 
+import com.islamzada.data.repo.FavoriteRepository
+import com.islamzada.data.repo.FavoriteRepositoryInterface
 import com.islamzada.data.repo.HotelsRepository
 import com.islamzada.data.repo.HotelsRepositoryInterface
 import dagger.Binds
@@ -16,9 +18,9 @@ abstract class RepositoryModule {
     @Singleton
     abstract fun providerHotelsRepository(repository: HotelsRepository) : HotelsRepositoryInterface
 
-//    @Binds
-//    @Singleton
-//    abstract fun bindFavRepository(idf : FavoriteRepository) : FavoriteRepositoryInterface
+    @Binds
+    @Singleton
+    abstract fun bindFavRepository(idf : FavoriteRepository) : FavoriteRepositoryInterface
 
 
 }

@@ -44,11 +44,11 @@ object ServiceModule {
         return retrofit.create(ApiService::class.java)
     }
 
-//    @Singleton
-//    @Provides
-//    fun provideFireStore() : FirebaseFirestore {
-//        return Firebase.firestore
-//    }
+    @Singleton
+    @Provides
+    fun provideFireStore() : FirebaseFirestore {
+        return Firebase.firestore
+    }
 
     @Provides
     @Singleton

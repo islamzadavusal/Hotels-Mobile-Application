@@ -1,23 +1,20 @@
 package com.islamzada.favorite
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.islamzada.entities.uimodel.HotelUIModel
+import com.islamzada.entities.model.FavoriteData
 import com.islamzada.favorite.databinding.FavListItemBinding
 
 class FavoriteListAdapter : RecyclerView.Adapter<FavListViewHolder>() {
 
     private val differ = AsyncListDiffer(this, differCallBack)
 
-    fun setData(items: List<HotelUIModel>){
+    fun setData(items: List<FavoriteData>){
         differ.submitList(items)
     }
 
@@ -40,12 +37,12 @@ class FavoriteListAdapter : RecyclerView.Adapter<FavListViewHolder>() {
     }
 
     companion object {
-        private val differCallBack = object : DiffUtil.ItemCallback<HotelUIModel>(){
-            override fun areItemsTheSame(oldItem: HotelUIModel, newItem: HotelUIModel): Boolean {
+        private val differCallBack = object : DiffUtil.ItemCallback<FavoriteData>(){
+            override fun areItemsTheSame(oldItem: FavoriteData, newItem: FavoriteData): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: HotelUIModel, newItem: HotelUIModel): Boolean {
+            override fun areContentsTheSame(oldItem: FavoriteData, newItem: FavoriteData): Boolean {
                 return oldItem == newItem
             }
         }
@@ -56,7 +53,7 @@ class FavoriteListAdapter : RecyclerView.Adapter<FavListViewHolder>() {
 class FavListViewHolder(private val binding: FavListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     @SuppressLint("SetTextI18n")
-    fun bind(model: HotelUIModel) {
+    fun bind(model: FavoriteData) {
         binding.apply {
             txtTitle.text = model.name
             txtAddress.text = model.address

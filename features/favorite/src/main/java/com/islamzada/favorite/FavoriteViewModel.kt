@@ -1,15 +1,10 @@
 package com.islamzada.favorite
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.islamzada.common.base.BaseViewModel
-import com.islamzada.common.flowstate.Resource
-import com.islamzada.common.flowstate.State
-import com.islamzada.domain.mapper.HotelResponseToUIStateMapper
-import com.islamzada.domain.usecase.MainHotelsUseCase
-import com.islamzada.entities.uimodel.HotelSearchUIState
+import com.islamzada.domain.usecase.FavoriteHotelUseCase
+import com.islamzada.entities.model.FavoriteData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 //@HiltViewModel
@@ -36,3 +31,11 @@ import javax.inject.Inject
 //        }
 //    }
 //}
+
+@HiltViewModel
+class FavoriteViewModel @Inject constructor(private val getFavoritesUseCase: FavoriteHotelUseCase): ViewModel() {
+
+    suspend fun getFav(): Flow<List<FavoriteData>> {
+        return getFavoritesUseCase.getFav()
+    }
+}
