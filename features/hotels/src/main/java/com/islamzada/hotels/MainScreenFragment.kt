@@ -32,7 +32,9 @@ class MainScreenFragment : BaseFragment<FragmentMainScreenBinding, MainScreenVie
 
         val currentUser = FirebaseAuth.getInstance().currentUser
 
-        binding.textViewWelcome.text = "Welcome, ${currentUser?.email.toString().toUpperCase()}".replace("@GMAIL.COM","")
+        binding.textViewWelcome.text =
+            "Welcome, ${currentUser?.email.toString().toUpperCase()}".replace("@GMAIL.COM", "")
+                .replace("@CODE.EDU.AZ", "")
 
         initRvAdapter()
 
