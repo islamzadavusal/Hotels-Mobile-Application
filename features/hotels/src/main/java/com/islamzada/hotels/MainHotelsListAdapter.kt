@@ -5,6 +5,7 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -73,6 +74,15 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
         binding.txtStartRating.text = "${model.reviewScore}".replace(".", ",")
         binding.txtNear.text = "merkezine ${model.cityCenterPointDistance} km"
 
+        val reviewScore = model.reviewScore
+        val result = when (reviewScore) {
+            in 0.0..3.99 -> "Kötü"
+            in 4.0..7.99 -> "Orta"
+            in 8.0..10.0 -> "Mükemmel"
+            else -> ""
+        }
+        binding.txtResult.text = result
+
         val url = model.thumbnailImage.replace("/0x0", "")
         Glide.with(binding.root).load(url).into(binding.imageView)
 
@@ -86,6 +96,7 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
             val data = hashMapOf(
                 "id" to model.id,
                 "name" to model.name,
+                "result" to result,
                 "address" to model.address,
                 "city" to model.city,
                 "country" to model.country,
@@ -104,6 +115,8 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
 
                     .addOnSuccessListener {
                         Log.d(TAG, "Success")
+                        Toast.makeText(binding.root.context, "Favorilere eklendi", Toast.LENGTH_SHORT).show()
+
                     }
 
                     .addOnFailureListener { exception ->

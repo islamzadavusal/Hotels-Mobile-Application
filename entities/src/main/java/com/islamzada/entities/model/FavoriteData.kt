@@ -8,6 +8,7 @@ data class FavoriteData (
     var price: Int = 0,
     var name: String = "",
     var address: String = "",
+    var result: String = "",
     var city: String = "",
     var country: String = "",
     var thumbnailImage: String = "",

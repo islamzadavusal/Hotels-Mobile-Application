@@ -23,10 +23,10 @@
             tools:layout_editor_absoluteX="16dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewWelcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="Welcome"
                 android:textColor="@color/black"
                 android:textSize="24sp"
@@ -38,8 +38,7 @@
                 android:id="@+id/sortBTN"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+               android:layout_marginVertical="15dp"
                 android:background="@drawable/button_background"
                 android:drawableStart="@drawable/sort"
                 android:text="Sırala"
@@ -52,7 +51,7 @@
                 android:paddingStart="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewWelcome" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/filterBTN"
