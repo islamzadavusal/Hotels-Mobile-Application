@@ -68,6 +68,7 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
 
         binding.txtTitle.text = model.name
         binding.txtAddress.text = model.address
+        binding.txtPrice.text = "${model.price} ₺"
         binding.txtCity.text = "${model.city}  -  ${model.country}"
         binding.txtStartRating.text = "${model.starRating}, ${model.reviewScore}"
         binding.txtNear.text = "${model.cityCenterPointDistanceName}  -  ${model.cityCenterPointDistance}"
@@ -92,7 +93,8 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
                 "reviewScore" to model.reviewScore,
                 "cityCenterPointDistanceName" to model.cityCenterPointDistanceName,
                 "cityCenterPointDistance" to model.cityCenterPointDistance,
-                "thumbnailImage" to model.thumbnailImage
+                "thumbnailImage" to model.thumbnailImage,
+                "price" to model.price
             )
 
             val currentUserUID = FirebaseAuth.getInstance().currentUser?.uid

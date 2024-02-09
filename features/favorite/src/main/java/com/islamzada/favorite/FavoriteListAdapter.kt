@@ -57,6 +57,7 @@ class FavListViewHolder(private val binding: FavListItemBinding) : RecyclerView.
         binding.apply {
             txtTitle.text = model.name
             txtAddress.text = model.address
+            txtPrice.text = "${model.price} ₺"
             txtCity.text = "${model.city} - ${model.country}"
             txtStartRating.text = "${model.starRating}, ${model.reviewScore}"
             txtNear.text = "${model.cityCenterPointDistanceName} - ${model.cityCenterPointDistance}"

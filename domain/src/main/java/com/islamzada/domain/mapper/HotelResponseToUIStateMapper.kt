@@ -84,7 +84,8 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
                 cityCenterPointDistance = hotel.details?.cityCenterPointDistance ?: 0.0,
                 cityCenterPointDistanceName = hotel.details?.cityCenterPointDistanceName ?: "",
                 image = hotel.details?.images?.firstOrNull()?.toString() ?: "",
-                thumbnailImage = hotel.details?.extra?.thumbnailImage?: ""
+                thumbnailImage = hotel.details?.extra?.thumbnailImage?: "",
+                price = hotel.rooms?.firstOrNull()?.offers?.firstOrNull()?.price ?: 0
 
 //
 //                roomUIModels = hotel.rooms.map { room ->

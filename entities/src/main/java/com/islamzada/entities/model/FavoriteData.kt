@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class FavoriteData (
     var id: Int = 0,
+    var price: Int = 0,
     var name: String = "",
     var address: String = "",
     var city: String = "",

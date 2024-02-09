@@ -21,7 +21,8 @@ data class HotelUIModel(
     val cityCenterPointDistance: Double,
     val cityCenterPointDistanceName: String,
     val image: String,
-    val thumbnailImage: String
+    val thumbnailImage: String,
+    val price: Int
 
 //    val roomUIModels: List<RoomUIModel>
 )
