@@ -7,4 +7,6 @@
     <string name="bad">Kötü</string>
     <string name="middle">İyi</string>
     <string name="perfect">Mükemmel</string>
+    <string name="add_to_fav">Favorilere eklendi</string>
+
 </resources>

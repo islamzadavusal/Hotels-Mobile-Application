@@ -115,7 +115,8 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
 
                     .addOnSuccessListener {
                         Log.d(TAG, "Success")
-                        Toast.makeText(binding.root.context, "Favorilere eklendi", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(binding.root.context,
+                            binding.root.context.getString(R.string.add_to_fav), Toast.LENGTH_SHORT).show()
 
                     }
 

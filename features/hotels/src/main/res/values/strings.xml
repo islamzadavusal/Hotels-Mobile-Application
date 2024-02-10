@@ -7,4 +7,5 @@
     <string name="bad">Bad</string>
     <string name="middle">Good</string>
     <string name="perfect">Perfect</string>
+    <string name="add_to_fav">Added to Favorites</string>
 </resources>
