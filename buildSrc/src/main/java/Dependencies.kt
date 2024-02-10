@@ -18,6 +18,8 @@ object Versions {
 
     const val firebaseBom = "32.7.0"
     const val playService = "20.7.0"
+
+    const val glide = "4.16.0"
 }
 
 object Libs {
@@ -43,6 +45,7 @@ object Libs {
 
     object GoogleService {
         const val firebaseAuth = "com.google.firebase:firebase-auth"
+        const val firebaseStore = "com.google.firebase:firebase-firestore"
         const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
         const val playService = "com.google.android.gms:play-services-auth:${Versions.playService}"
     }
@@ -50,6 +53,10 @@ object Libs {
     object NAV {
         const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    }
+
+    object GLIDE {
+        const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     }
 }
 

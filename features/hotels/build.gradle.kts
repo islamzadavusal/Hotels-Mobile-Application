@@ -42,21 +42,14 @@ android {
 
 dependencies {
 
-    implementation(Libs.NAV.navigationUi)
-    implementation(Libs.NAV.navigationFragment)
-    implementation(Libs.HILT.hilt)
-    kapt(Libs.HILT.hiltKapt)
-
     implementation(project(":entities"))
     implementation(project(":common"))
     implementation(project(":domain"))
 
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
-
-    implementation ("com.squareup.picasso:picasso:2.71828")
-
-    implementation ("com.google.firebase:firebase-firestore")
-
+    implementation(Libs.NAV.navigationUi)
+    implementation(Libs.NAV.navigationFragment)
+    implementation(Libs.HILT.hilt)
+    kapt(Libs.HILT.hiltKapt)
 
     implementation(Libs.UI.material)
     implementation(Libs.UI.core)
@@ -65,6 +58,9 @@ dependencies {
     implementation(platform(Libs.GoogleService.firebaseBom))
     implementation(Libs.GoogleService.firebaseAuth)
     implementation(Libs.GoogleService.playService)
+    implementation(Libs.GoogleService.firebaseStore)
+
+    implementation(Libs.GLIDE.glide)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

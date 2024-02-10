@@ -47,7 +47,7 @@ dependencies {
     implementation(platform(Libs.GoogleService.firebaseBom))
     implementation(Libs.GoogleService.firebaseAuth)
     implementation(Libs.GoogleService.playService)
-    implementation ("com.google.firebase:firebase-firestore")
+    implementation(Libs.GoogleService.firebaseStore)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

@@ -4,5 +4,6 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="android:statusBarColor">@color/colorBlue</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 </resources>
