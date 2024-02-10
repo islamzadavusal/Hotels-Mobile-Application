@@ -4,4 +4,7 @@
     <string name="filter">Filtre</string>
     <string name="map">Harita</string>
     <string name="sort_by">Sırala</string>
+    <string name="bad">Kötü</string>
+    <string name="middle">İyi</string>
+    <string name="perfect">Mükemmel</string>
 </resources>

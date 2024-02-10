@@ -4,4 +4,7 @@
     <string name="filter">Filter</string>
     <string name="map">Map</string>
     <string name="sort_by">Sort by</string>
+    <string name="bad">Bad</string>
+    <string name="middle">Good</string>
+    <string name="perfect">Perfect</string>
 </resources>

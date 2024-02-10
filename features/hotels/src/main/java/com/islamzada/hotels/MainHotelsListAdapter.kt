@@ -76,9 +76,9 @@ class MainListViewHolder(private val binding: HotelListItemBinding) : RecyclerVi
 
         val reviewScore = model.reviewScore
         val result = when (reviewScore) {
-            in 0.0..3.99 -> "Kötü"
-            in 4.0..7.99 -> "Orta"
-            in 8.0..10.0 -> "Mükemmel"
+            in 0.0..3.99 -> binding.root.context.getString(R.string.bad)
+            in 4.0..7.99 -> binding.root.context.getString(R.string.middle)
+            in 8.0..10.0 -> binding.root.context.getString(R.string.perfect)
             else -> ""
         }
         binding.txtResult.text = result
