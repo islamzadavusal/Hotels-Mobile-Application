@@ -5,13 +5,13 @@
     <string name="error_login_detail">Check the information again.</string>
 
     <string name="email">E-mail</string>
-    <string name="password">Şifre</string>
-    <string name="sign_up">Üye olun</string>
-    <string name="or_register_with">veya Üye ol</string>
-    <string name="register_now">Hesabınız yok mu? Şimdi üye Ol</string>
-    <string name="do_you_have_an_account_continue_with_that_account">Hesabın var mı? Bu hesapla devam et</string>
-    <string name="or_login_with">veya giriş yap</string>
-    <string name="sign_in">Giriş yap</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_register_with">or Register with</string>
+    <string name="register_now">Don`t have an account ? Register Now</string>
+    <string name="do_you_have_an_account_continue_with_that_account">Do you have an account? Continue with that account</string>
+    <string name="or_login_with">or Login with</string>
+    <string name="sign_in">Sign In</string>
 
 <!--    AUT-->
     <string name="facebook_app_id" translatable="false"> 289429107484345 </string>

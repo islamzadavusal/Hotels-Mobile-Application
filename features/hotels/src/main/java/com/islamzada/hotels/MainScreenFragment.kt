@@ -35,6 +35,7 @@ class MainScreenFragment : BaseFragment<FragmentMainScreenBinding, MainScreenVie
         binding.textViewWelcome.text =
             "Welcome, ${currentUser?.email.toString().toUpperCase()}".replace("@GMAIL.COM", "")
                 .replace("@CODE.EDU.AZ", "")
+                .replace("@GMAİL.COM", "")
 
         initRvAdapter()
 
