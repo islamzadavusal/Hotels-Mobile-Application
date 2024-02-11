@@ -20,5 +20,9 @@
 
     <string name="google_client_id" translatable="false"> 302518643394-cg0lunlqhk5da295vq5quotc1h47qvv6.apps.googleusercontent.com </string>
 
+    <string name="main">Main</string>
+    <string name="favorite">Favorite</string>
+    <string name="account">Account</string>
+
 
 </resources>

@@ -13,6 +13,10 @@
     <string name="or_login_with">veya Giriş yap</string>
     <string name="sign_in">Giriş yap</string>
 
+    <string name="main">Ana sayfa</string>
+    <string name="favorite">Favoriler</string>
+    <string name="account">Hesabım</string>
+
 
 <!--    AUT-->
     <!--    <string name="facebook_app_id">289429107484345</string>-->
