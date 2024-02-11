@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AccountFragment">
 
     <androidx.cardview.widget.CardView
@@ -21,7 +22,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/coverImage"
@@ -80,7 +82,7 @@
         android:drawablePadding="-100dp"
         android:paddingStart="80dp"
         android:gravity="center"
-        android:text="EXIT"
+        android:text="@string/exit"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
