@@ -2,6 +2,7 @@ package com.islamzada.domain.usecase
 
 import com.islamzada.common.flowstate.Resource
 import com.islamzada.data.repo.FavoriteRepository
+import com.islamzada.data.repo.FavoriteRepositoryInterface
 import com.islamzada.entities.model.FavoriteData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -29,7 +30,7 @@ import javax.inject.Inject
 //}
 
 
-class FavoriteHotelUseCase @Inject constructor(private val repository: FavoriteRepository) {
+class FavoriteHotelUseCase @Inject constructor(private val repository: FavoriteRepositoryInterface) {
 
     suspend fun getFav(): Flow<List<FavoriteData>> {
         return repository.getAll()
