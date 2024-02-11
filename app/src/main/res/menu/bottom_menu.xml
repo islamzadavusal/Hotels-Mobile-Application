@@ -5,16 +5,16 @@
     <item
         android:id="@+id/nav_host_hotels"
         android:icon="@drawable/menu"
-        android:title="Main" />
+        android:title="@string/main" />
 
     <item
         android:id="@+id/nav_host_favorite"
         android:icon="@drawable/favorite_card"
-        android:title="Favorite" />
+        android:title="@string/favorite" />
 
     <item
         android:id="@+id/nav_host_account"
         android:icon="@drawable/account"
-        android:title="Account" />
+        android:title="@string/account" />
 
 </menu>
