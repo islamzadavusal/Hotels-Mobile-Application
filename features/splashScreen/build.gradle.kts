@@ -3,6 +3,7 @@ plugins {
     id(Plugins.jetBrainsKotlin)
     id(Plugins.kotlinKapt)
     id(Plugins.safeArgs)
+    id(Plugins.googleFirebase)
 }
 
 android {
@@ -43,11 +44,17 @@ dependencies {
     implementation ("com.airbnb.android:lottie:6.3.0")
 
     implementation(project(":features:login"))
+    implementation(project(":features:hotels"))
 
     implementation(Libs.UI.material)
     implementation(Libs.UI.core)
     implementation(Libs.UI.combat)
     implementation(Libs.UI.constraintlayout)
+
+    implementation(platform(Libs.GoogleService.firebaseBom))
+    implementation(Libs.GoogleService.firebaseAuth)
+    implementation(Libs.GoogleService.playService)
+
 
     implementation(Libs.NAV.navigationUi)
     implementation(Libs.NAV.navigationFragment)

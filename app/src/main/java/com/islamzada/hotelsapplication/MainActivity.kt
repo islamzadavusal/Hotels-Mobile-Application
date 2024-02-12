@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+//    private lateinit var auth: FirebaseAuth
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,20 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        auth = FirebaseAuth.getInstance()
-
-        if (auth.currentUser == null) {
-            // Eğer kullanıcı oturum açmamışsa, giriş fragmentini aç
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.navigationApp, MainScreenFragment())
-                .commit()
-        } else {
-            // Eğer kullanıcı oturum açmışsa, ana ekrana geç
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.navigationApp, LoginFragment())
-                .commit()
-        }
 
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navigationApp) as NavHostFragment
@@ -52,9 +38,20 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding.bottomNavBar.visibility = View.VISIBLE
             }
-
-
     }
     }
-
 }
+
+//        auth = FirebaseAuth.getInstance()
+//
+//        if (auth.currentUser == null) {
+//            // Eğer kullanıcı oturum açmamışsa, giriş fragmentini aç
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.navigationApp, MainScreenFragment())
+//                .commit()
+//        } else {
+//            // Eğer kullanıcı oturum açmışsa, ana ekrana geç
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.navigationApp, LoginFragment())
+//                .commit()
+//        }
