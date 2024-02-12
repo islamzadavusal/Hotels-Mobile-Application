@@ -22,6 +22,7 @@ class SplashScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
 
 
@@ -39,7 +40,6 @@ class SplashScreenFragment : Fragment() {
             override fun onAnimationRepeat(p0: Animator) {
             }
         })
-
 
         return binding.root
     }

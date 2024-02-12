@@ -14,9 +14,6 @@
             android:id="@+id/splashToLogin"
             app:destination="@id/nav_host_login" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_nav_host_login"
-            app:destination="@id/nav_host_login" />
-        <action
             android:id="@+id/splashToMain"
             app:destination="@id/nav_host_hotels" />
     </fragment>
