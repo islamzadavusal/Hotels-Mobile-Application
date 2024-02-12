@@ -1,45 +1,20 @@
 plugins {
-    id(Plugins.androidApplication)
+    id(Plugins.library)
     id(Plugins.jetBrainsKotlin)
     id(Plugins.hilt)
     id(Plugins.kotlinKapt)
     id(Plugins.googleFirebase)
-    id(Plugins.safeArgs)
 }
 
 android {
-    namespace = "com.islamzada.hotelsapplication"
+    namespace = "com.islamzada.login"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.islamzada.hotelsapplication"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildFeatures {
-        viewBinding = true
-        dataBinding = true
-    }
-
-    signingConfigs {
-        create("release") {
-            keyAlias = "key0"
-            keyPassword = "Qweasd"
-            storeFile = file("../certificates/Release")
-            storePassword = "Qweasd"
-        }
-
-        create("dev") {
-            keyAlias = "key0"
-            keyPassword = "Qweasd"
-            storeFile = file("../certificates/Debug")
-            storePassword = "Qweasd"
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildFeatures {
@@ -49,18 +24,12 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("release")
-        }
-
-        debug {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("dev")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
-
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -72,12 +41,10 @@ android {
 
 dependencies {
 
-    implementation(project(":features:hotels"))
-    implementation(project(":features:login"))
-    implementation(project(":features:favorite"))
-    implementation(project(":features:account"))
+    implementation ("com.airbnb.android:lottie:6.3.0")
 
     implementation(project(":common"))
+    implementation(project(":features:hotels"))
 
     implementation(Libs.UI.material)
     implementation(Libs.NAV.navigationUi)
@@ -94,7 +61,6 @@ dependencies {
     implementation(Libs.GoogleService.firebaseAuth)
     implementation(Libs.GoogleService.playService)
 
-    implementation ("com.airbnb.android:lottie:6.3.0")
 
     implementation("com.facebook.android:facebook-login:latest.release")
     implementation("com.facebook.android:facebook-android-sdk:15.1.0")

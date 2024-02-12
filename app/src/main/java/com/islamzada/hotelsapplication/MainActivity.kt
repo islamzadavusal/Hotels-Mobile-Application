@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.google.firebase.auth.FirebaseAuth
+import com.islamzada.hotels.MainScreenFragment
 import com.islamzada.hotelsapplication.databinding.ActivityMainBinding
+import com.islamzada.login.LoginFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,8 +22,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
+
+        if (auth.currentUser == null) {
+            // Eğer kullanıcı oturum açmamışsa, giriş fragmentini aç
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.navigationApp, MainScreenFragment())
+                .commit()
+        } else {
+            // Eğer kullanıcı oturum açmışsa, ana ekrana geç
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.navigationApp, LoginFragment())
+                .commit()
+        }
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navigationApp) as NavHostFragment
         NavigationUI.setupWithNavController(binding.bottomNavBar, navHostFragment.navController)
+
 
 
     }

@@ -1,4 +1,4 @@
-package com.islamzada.hotelsapplication.loginPage
+package com.islamzada.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -29,16 +29,13 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.islamzada.common.util.ErrorMessage
 import com.islamzada.common.util.showMessage
-import com.islamzada.hotelsapplication.LoginActivity
-import com.islamzada.hotelsapplication.MainActivity
-import com.islamzada.hotelsapplication.R
-import com.islamzada.hotelsapplication.databinding.FragmentRegisterBinding
+import com.islamzada.login.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RegisterFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentRegisterBinding
+    private lateinit var binding: FragmentLoginBinding
 
     private var callbackManager: CallbackManager = CallbackManager.Factory.create()
 
@@ -54,21 +51,21 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentRegisterBinding.inflate(inflater)
+        binding = FragmentLoginBinding.inflate(inflater)
 
-        binding.textViewLoginNow.setOnClickListener {
-           openLogin()
+        binding.textViewRegisterNow.setOnClickListener {
+           openRegister()
         }
 
-        binding.facebookRegisterButton.setOnClickListener {
+        binding.facebookLoginButton.setOnClickListener {
             loginFacebook()
         }
 
-        binding.googleRegisterButton.setOnClickListener {
+        binding.googleLoginButton.setOnClickListener {
             loginGoogle()
         }
 
-        binding.btnSignUp.setOnClickListener {
+        binding.btnSignIn.setOnClickListener {
             register()
         }
 
@@ -89,7 +86,7 @@ class RegisterFragment : Fragment() {
         }
 
         val firebaseAuth = Firebase.auth
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 openMain()
             }.addOnFailureListener { exception ->
@@ -219,13 +216,11 @@ class RegisterFragment : Fragment() {
 
 
     private fun openMain() {
-        val intent = Intent(requireActivity(), MainActivity::class.java)
-        requireActivity().finish()
-        startActivity(intent)
+        Navigation.findNavController(requireView()).navigate(R.id.registerToMain)
     }
 
-    private fun openLogin() {
-        (requireActivity() as LoginActivity).registerToLogin()
+    private fun openRegister() {
+        Navigation.findNavController(requireView()).navigate(R.id.registerToLogin)
     }
 
 }
