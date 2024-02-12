@@ -2,6 +2,7 @@ package com.islamzada.hotelsapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.firebase.auth.FirebaseAuth
@@ -39,8 +40,19 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navigationApp) as NavHostFragment
         NavigationUI.setupWithNavController(binding.bottomNavBar, navHostFragment.navController)
 
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == com.islamzada.login.R.id.loginFragment ||
+                destination.id == com.islamzada.login.R.id.registerFragment
+            ) // splash fragment
+            {
+                binding.bottomNavBar.visibility = View.GONE
+
+            } else {
+                binding.bottomNavBar.visibility = View.VISIBLE
+            }
 
 
+    }
     }
 
 }
