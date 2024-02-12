@@ -3,6 +3,7 @@ plugins {
     id(Plugins.jetBrainsKotlin)
     id(Plugins.kotlinKapt)
     id(Plugins.hilt)
+    id(Plugins.safeArgs)
     id(Plugins.googleFirebase)
 }
 
@@ -53,6 +54,8 @@ dependencies {
     implementation(platform(Libs.GoogleService.firebaseBom))
     implementation(Libs.GoogleService.firebaseAuth)
     implementation(Libs.GoogleService.playService)
+
+    implementation(project(":features:login"))
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     

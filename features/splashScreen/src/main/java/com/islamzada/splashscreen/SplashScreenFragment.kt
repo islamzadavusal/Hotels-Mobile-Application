@@ -27,7 +27,6 @@ class SplashScreenFragment : Fragment() {
 
         playLottie()
 
-
         return binding.root
     }
 
@@ -50,20 +49,19 @@ class SplashScreenFragment : Fragment() {
         })
     }
 
-    fun checkUserLoggedIn() {
+    private fun checkUserLoggedIn() {
         val auth = FirebaseAuth.getInstance()
 
         if (auth.currentUser == null) {
-            // Eğer kullanıcı oturum açmamışsa, giriş fragmentini aç
             val action = SplashScreenFragmentDirections.splashToMain()
             findNavController().navigate(action)
         } else {
-            // Eğer kullanıcı oturum açmışsa, ana ekrana geç
             val action = SplashScreenFragmentDirections.splashToLogin()
             findNavController().navigate(action)
         }
     }
 }
+
 
 //        val backgroundImg: ImageView = binding.imageViewSplash
 //        val slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.slide)

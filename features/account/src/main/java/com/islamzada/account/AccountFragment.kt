@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.islamzada.account.databinding.FragmentAccountBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,6 +32,9 @@ class AccountFragment : Fragment() {
         binding.buttonEXT.setOnClickListener {
 
             FirebaseAuth.getInstance().signOut()
+
+            val action = AccountFragmentDirections.accountToLogin()
+            findNavController().navigate(action)
 
 //            val action = MainFragmentDirections.MainToIn()
 //            findNavController().navigate(action)

@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.islamzada.account.AccountFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/accountToLogin"
+            app:destination="@id/nav_host_login" />
+    </fragment>
+
+
+    <include app:graph="@navigation/nav_host_login">
+    </include>
 </navigation>
