@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_host_app"
-    app:startDestination="@id/nav_host_login">
+    app:startDestination="@id/nav_host_splash">
 
     <include app:graph="@navigation/nav_host_hotels">
     </include>
@@ -14,6 +14,9 @@
     </include>
 
     <include app:graph="@navigation/nav_host_login">
+    </include>
+
+    <include app:graph="@navigation/nav_host_splash">
     </include>
 
 </navigation>

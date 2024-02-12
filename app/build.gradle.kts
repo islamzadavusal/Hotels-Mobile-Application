@@ -74,6 +74,7 @@ dependencies {
 
     implementation(project(":features:hotels"))
     implementation(project(":features:login"))
+    implementation(project(":features:splashScreen"))
     implementation(project(":features:favorite"))
     implementation(project(":features:account"))
 

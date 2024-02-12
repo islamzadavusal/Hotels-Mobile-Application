@@ -37,13 +37,15 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navigationApp) as NavHostFragment
         NavigationUI.setupWithNavController(binding.bottomNavBar, navHostFragment.navController)
 
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == com.islamzada.login.R.id.loginFragment ||
-                destination.id == com.islamzada.login.R.id.registerFragment
-            ) // splash fragment
+                destination.id == com.islamzada.login.R.id.registerFragment ||
+                destination.id == com.islamzada.splashscreen.R.id.splashScreenFragment
+            )
             {
                 binding.bottomNavBar.visibility = View.GONE
 
