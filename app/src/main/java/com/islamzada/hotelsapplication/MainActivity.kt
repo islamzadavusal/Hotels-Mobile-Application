@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import com.google.firebase.auth.FirebaseAuth
-import com.islamzada.hotels.MainScreenFragment
 import com.islamzada.hotelsapplication.databinding.ActivityMainBinding
-import com.islamzada.login.LoginFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

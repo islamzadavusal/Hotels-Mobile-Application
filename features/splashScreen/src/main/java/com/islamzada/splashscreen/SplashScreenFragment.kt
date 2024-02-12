@@ -21,11 +21,19 @@ class SplashScreenFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
 
+        playLottie()
 
+
+        return binding.root
+    }
+
+    private fun playLottie(){
+        binding.imageViewSplash.repeatCount = 0
+        binding.imageViewSplash.playAnimation()
         binding.imageViewSplash.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(p0: Animator) {
             }
@@ -40,8 +48,6 @@ class SplashScreenFragment : Fragment() {
             override fun onAnimationRepeat(p0: Animator) {
             }
         })
-
-        return binding.root
     }
 
     fun checkUserLoggedIn() {
