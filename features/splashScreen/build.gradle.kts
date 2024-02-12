@@ -53,8 +53,6 @@ dependencies {
 
     implementation(platform(Libs.GoogleService.firebaseBom))
     implementation(Libs.GoogleService.firebaseAuth)
-    implementation(Libs.GoogleService.playService)
-
 
     implementation(Libs.NAV.navigationUi)
     implementation(Libs.NAV.navigationFragment)
