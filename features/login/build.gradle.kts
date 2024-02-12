@@ -4,6 +4,8 @@ plugins {
     id(Plugins.hilt)
     id(Plugins.kotlinKapt)
     id(Plugins.googleFirebase)
+    id(Plugins.safeArgs)
+
 }
 
 android {

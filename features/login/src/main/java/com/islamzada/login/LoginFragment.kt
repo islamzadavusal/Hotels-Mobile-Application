@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -216,11 +217,13 @@ class LoginFragment : Fragment() {
 
 
     private fun openMain() {
-        Navigation.findNavController(requireView()).navigate(R.id.registerToMain)
+        val action = LoginFragmentDirections.loginToMain()
+        findNavController().navigate(action)
     }
 
     private fun openRegister() {
-        Navigation.findNavController(requireView()).navigate(R.id.registerToLogin)
+        val action = LoginFragmentDirections.loginToRegister()
+        findNavController().navigate(action)
     }
 
 }
