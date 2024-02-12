@@ -36,9 +36,6 @@ class AccountFragment : Fragment() {
             val action = AccountFragmentDirections.accountToLogin()
             findNavController().navigate(action)
 
-//            val action = MainFragmentDirections.MainToIn()
-//            findNavController().navigate(action)
-
         }
 
 
