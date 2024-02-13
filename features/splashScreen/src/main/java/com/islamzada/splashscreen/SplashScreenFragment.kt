@@ -52,7 +52,7 @@ class SplashScreenFragment : Fragment() {
     private fun checkUserLoggedIn() {
         val auth = FirebaseAuth.getInstance()
 
-        if (auth.currentUser == null) {
+        if (auth.currentUser != null) {
             val action = SplashScreenFragmentDirections.splashToMain()
             findNavController().navigate(action)
         } else {

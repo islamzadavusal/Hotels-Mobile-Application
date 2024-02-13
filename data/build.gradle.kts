@@ -43,7 +43,6 @@ dependencies {
     implementation(Libs.HILT.hilt)
     kapt(Libs.HILT.hiltKapt)
 
-
     implementation(platform(Libs.GoogleService.firebaseBom))
     implementation(Libs.GoogleService.firebaseAuth)
     implementation(Libs.GoogleService.playService)

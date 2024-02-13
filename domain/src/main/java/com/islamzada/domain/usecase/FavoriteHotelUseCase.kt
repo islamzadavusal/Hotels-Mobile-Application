@@ -9,6 +9,15 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+
+class FavoriteHotelUseCase @Inject constructor(private val repository: FavoriteRepositoryInterface) {
+
+    suspend fun getFav(): Flow<List<FavoriteData>> {
+        return repository.getAll()
+    }
+}
+
+
 //class FavoriteHotelUseCase @Inject constructor(
 //    private val repository: FavoriteRepository
 //) {
@@ -28,11 +37,3 @@ import javax.inject.Inject
 //        emit(Resource.Error(exception.localizedMessage))
 //    }
 //}
-
-
-class FavoriteHotelUseCase @Inject constructor(private val repository: FavoriteRepositoryInterface) {
-
-    suspend fun getFav(): Flow<List<FavoriteData>> {
-        return repository.getAll()
-    }
-}

@@ -6,6 +6,57 @@ import com.islamzada.entities.uimodel.HotelSearchUIState
 import com.islamzada.entities.uimodel.HotelUIModel
 import javax.inject.Inject
 
+class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, HotelSearchUIState> {
+    override fun map(input: Result): HotelSearchUIState {
+        return HotelSearchUIState(
+            header = input.getSearchHeader(),
+            hotels = input.getHotels()
+        )
+    }
+
+    private fun Result.getSearchHeader(): HotelSearchHeaderUIModel {
+        return HotelSearchHeaderUIModel(
+            requestId = requestId ?: "",
+            funnelId = funnelId ?: ""
+        )
+    }
+
+    private fun Result.getHotels(): List<HotelUIModel> {
+        return offers?.hotels?.map { hotel ->
+            HotelUIModel(
+                id = hotel.id ?: 0,
+                name = hotel.details?.name ?: "",
+                address = hotel.details?.address?.address ?: "",
+                city = hotel.details?.address?.city?.name ?: "",
+                country = hotel.details?.address?.country?.name ?: "",
+                reviewScore = hotel.details?.reviewScore?.toDouble() ?: 0.0,
+                cityCenterPointDistance = hotel.details?.cityCenterPointDistance ?: 0.0,
+                image = hotel.details?.images?.firstOrNull()?.toString() ?: "",
+                thumbnailImage = hotel.details?.extra?.thumbnailImage?: "",
+                price = hotel.rooms?.firstOrNull()?.offers?.firstOrNull()?.price ?: 0
+
+//
+//                roomUIModels = hotel.rooms.map { room ->
+//                    RoomUIModel(
+//                        reference = room.reference ?: "",
+//                        roomType = room.type?.name ?: "",
+//                        totalCount = room.offers.firstOrNull()?.totalCount ?: 0,
+//                        availableCount = room.offers.firstOrNull()?.availableCount ?: 0,
+//                        price = room.offers.firstOrNull()?.price ?: 0,
+//                        conceptDescription = room.offers.firstOrNull()?.concept?.description ?: "",
+//                        roomClassDescription = room.offers.firstOrNull()?.roomClass?.description ?: "",
+//                        imageUrl = room.images.firstOrNull()?.url ?: ""
+//                    )
+            //    }
+
+            )
+        } ?: listOf()
+    }
+}
+
+
+
+
 //class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<HotelsResponse, HotelSearchUIState> {
 //    override fun map(input: HotelsResponse): HotelSearchUIState {
 //        return HotelSearchUIState(
@@ -55,51 +106,3 @@ import javax.inject.Inject
 //        )
 //    }
 //}
-
-class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, HotelSearchUIState> {
-    override fun map(input: Result): HotelSearchUIState {
-        return HotelSearchUIState(
-            header = input.getSearchHeader(),
-            hotels = input.getHotels()
-        )
-    }
-
-    private fun Result.getSearchHeader(): HotelSearchHeaderUIModel {
-        return HotelSearchHeaderUIModel(
-            requestId = requestId ?: "",
-            funnelId = funnelId ?: ""
-        )
-    }
-
-    private fun Result.getHotels(): List<HotelUIModel> {
-        return offers?.hotels?.map { hotel ->
-            HotelUIModel(
-                id = hotel.id ?: 0,
-                name = hotel.details?.name ?: "",
-                address = hotel.details?.address?.address ?: "",
-                city = hotel.details?.address?.city?.name ?: "",
-                country = hotel.details?.address?.country?.name ?: "",
-                reviewScore = hotel.details?.reviewScore?.toDouble() ?: 0.0,
-                cityCenterPointDistance = hotel.details?.cityCenterPointDistance ?: 0.0,
-                image = hotel.details?.images?.firstOrNull()?.toString() ?: "",
-                thumbnailImage = hotel.details?.extra?.thumbnailImage?: "",
-                price = hotel.rooms?.firstOrNull()?.offers?.firstOrNull()?.price ?: 0
-
-//
-//                roomUIModels = hotel.rooms.map { room ->
-//                    RoomUIModel(
-//                        reference = room.reference ?: "",
-//                        roomType = room.type?.name ?: "",
-//                        totalCount = room.offers.firstOrNull()?.totalCount ?: 0,
-//                        availableCount = room.offers.firstOrNull()?.availableCount ?: 0,
-//                        price = room.offers.firstOrNull()?.price ?: 0,
-//                        conceptDescription = room.offers.firstOrNull()?.concept?.description ?: "",
-//                        roomClassDescription = room.offers.firstOrNull()?.roomClass?.description ?: "",
-//                        imageUrl = room.images.firstOrNull()?.url ?: ""
-//                    )
-            //    }
-
-            )
-        } ?: listOf()
-    }
-}

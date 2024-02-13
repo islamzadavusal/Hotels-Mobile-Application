@@ -17,7 +17,6 @@ android {
 
     buildFeatures {
         viewBinding = true
-        dataBinding = true
     }
 
     buildTypes {
@@ -45,7 +44,6 @@ dependencies {
     implementation(Libs.UI.material)
     implementation(Libs.UI.core)
     implementation(Libs.UI.combat)
-
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

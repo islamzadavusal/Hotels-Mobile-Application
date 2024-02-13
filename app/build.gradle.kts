@@ -4,7 +4,6 @@ plugins {
     id(Plugins.hilt)
     id(Plugins.kotlinKapt)
     id(Plugins.googleFirebase)
-    id(Plugins.safeArgs)
 }
 
 android {
@@ -16,14 +15,13 @@ android {
         minSdk = 24
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildFeatures {
         viewBinding = true
-        dataBinding = true
     }
 
     signingConfigs {
