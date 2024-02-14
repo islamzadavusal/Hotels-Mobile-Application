@@ -17,16 +17,15 @@ Hotels Mobile Application
 - **Mapper:** Mapper implementation for mapping data between layers.
 
 ## Screenshots:
-<img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/0fa06617-8f69-45b6-b5fd-8e29fb6f4cc4" />
+![1] <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/0fa06617-8f69-45b6-b5fd-8e29fb6f4cc4" />
 
-![2](https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/47938c58-a4a0-4f83-a817-c829b03d57be)
+![2] <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94" />
 
-![3](https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94)
+![3] <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94" />
 
-![4](https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/00c65cc8-c8f6-4b21-b2bd-62bacdca8a8f)
+![4] <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/00c65cc8-c8f6-4b21-b2bd-62bacdca8a8f" />
 
-![5](https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/52bbd10f-6561-4481-becc-fc2a47fd6afe)
-
+![5] <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/52bbd10f-6561-4481-becc-fc2a47fd6afe" />
 
 ## Contact
 
