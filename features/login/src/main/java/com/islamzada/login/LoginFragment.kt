@@ -1,12 +1,17 @@
 package com.islamzada.login
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.Navigation
@@ -31,6 +36,7 @@ import com.google.firebase.auth.auth
 import com.islamzada.common.util.ErrorMessage
 import com.islamzada.common.util.showMessage
 import com.islamzada.common.util.toMain
+import androidx.activity.addCallback
 import com.islamzada.login.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -54,6 +60,11 @@ class LoginFragment : Fragment() {
     ): View {
 
         binding = FragmentLoginBinding.inflate(inflater)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            showExitDialog()
+        }
+
 
         binding.textViewRegisterNow.setOnClickListener {
            openRegister()
@@ -229,6 +240,32 @@ class LoginFragment : Fragment() {
         val action = LoginFragmentDirections.loginToRegister()
         findNavController().navigate(action)
 
+
+    }
+
+    private fun showExitDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setMessage("Do you want to exit the app ?")
+            .setPositiveButton("Yes", DialogInterface.OnClickListener { _, _ ->
+                requireActivity().finish()
+            })
+            .setNegativeButton("No", DialogInterface.OnClickListener { dialog, _ ->
+                dialog.dismiss()
+            })
+        val dialog = builder.create()
+        dialog.setOnShowListener {
+            val messageView = dialog.findViewById<TextView>(android.R.id.message)
+            messageView.setTextColor(Color.parseColor("#FFFFFFFF"))
+
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.BLACK))
+
+            val positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            positiveButton.setTextColor(Color.WHITE)
+
+            val negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+            negativeButton.setTextColor(Color.WHITE)
+        }
+        dialog.show()
 
     }
 
