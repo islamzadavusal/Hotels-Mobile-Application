@@ -17,7 +17,7 @@ Hotels Mobile Application
 - **Mapper:** Mapper implementation for mapping data between layers.
 
 ## Screenshots:
-<img width="100rem" height="100rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/0fa06617-8f69-45b6-b5fd-8e29fb6f4cc4" />
+<img width="300rem" height="300rem" style={objectFit:"contain"} src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/0fa06617-8f69-45b6-b5fd-8e29fb6f4cc4" />
 
 ![2](https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/47938c58-a4a0-4f83-a817-c829b03d57be)
 
