@@ -13,6 +13,8 @@ Hotels Mobile Application
 - **Retrofit:** Retrofit library for HTTP requests.
 - **OkHttp:** OkHttp library for HTTP requests.
 - **Dependency Injection:** Hilt and Dagger used for dependency injection.
+- **UseCase:** To take the workload of the ViewModel and make it easier.
+- **Mapper:** Mapper implementation for mapping data between layers.
 
 ## Screenshots:
 
