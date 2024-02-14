@@ -18,15 +18,15 @@ Hotels Mobile Application
 
 ## Screenshots:
 
-<img width="300rem" height="700rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/0fa06617-8f69-45b6-b5fd-8e29fb6f4cc4" />
+<img width="300rem" height="650rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/0fa06617-8f69-45b6-b5fd-8e29fb6f4cc4" />
 
-<img width="300rem" height="700rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/622df88d-481a-4209-a6a3-48a65b44354e" />
+<img width="300rem" height="650rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/622df88d-481a-4209-a6a3-48a65b44354e" />
 
-<img width="300rem" height="700rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94" />
+<img width="300rem" height="650rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94" />
 
-<img width="300rem" height="700rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/00c65cc8-c8f6-4b21-b2bd-62bacdca8a8f" />
+<img width="300rem" height="650rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/00c65cc8-c8f6-4b21-b2bd-62bacdca8a8f" />
 
-<img width="300rem" height="700rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/52bbd10f-6561-4481-becc-fc2a47fd6afe" />
+<img width="300rem" height="650rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/52bbd10f-6561-4481-becc-fc2a47fd6afe" />
 
 ## Contact
 
