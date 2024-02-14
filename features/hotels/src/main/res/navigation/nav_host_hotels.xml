@@ -11,4 +11,9 @@
         android:label="fragment_main_screen"
         tools:layout="@layout/fragment_main_screen" />
 
+    <deepLink app:uri="hotel://toMain/">
+
+    </deepLink>
+
+
 </navigation>

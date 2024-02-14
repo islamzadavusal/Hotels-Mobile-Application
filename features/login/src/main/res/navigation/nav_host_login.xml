@@ -11,26 +11,29 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/loginToMain"
-            app:destination="@id/nav_host_hotels" />
-        <action
             android:id="@+id/loginToRegister"
             app:destination="@id/registerFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.islamzada.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/registerToMain"
-            app:destination="@id/nav_host_hotels" />
-        <action
             android:id="@+id/registerToLogin"
             app:destination="@id/loginFragment" />
     </fragment>
 
     <include app:graph="@navigation/nav_host_hotels">
+
     </include>
+
+
+    <deepLink app:uri="hotel://accountToLogin/">
+
+    </deepLink>
+
+
 
 </navigation>

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.islamzada.account.databinding.FragmentAccountBinding
+import com.islamzada.common.util.accountToLogin
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -33,13 +34,19 @@ class AccountFragment : Fragment() {
 
             FirebaseAuth.getInstance().signOut()
 
-            val action = AccountFragmentDirections.accountToLogin()
-            findNavController().navigate(action)
+            openLogin()
+
+//            val action = AccountFragmentDirections.accountToLogin()
+//            findNavController().navigate(action)
 
         }
 
 
         return binding.root
+    }
+
+    private fun openLogin() {
+        findNavController().accountToLogin()
     }
 
 }

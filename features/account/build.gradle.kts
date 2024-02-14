@@ -57,6 +57,8 @@ dependencies {
 
     implementation(project(":features:login"))
 
+    implementation(project(":common"))
+
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     
     testImplementation("junit:junit:4.13.2")

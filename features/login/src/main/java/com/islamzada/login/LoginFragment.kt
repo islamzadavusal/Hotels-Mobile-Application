@@ -30,6 +30,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.islamzada.common.util.ErrorMessage
 import com.islamzada.common.util.showMessage
+import com.islamzada.common.util.toMain
 import com.islamzada.login.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -217,13 +218,18 @@ class LoginFragment : Fragment() {
 
 
     private fun openMain() {
-        val action = LoginFragmentDirections.loginToMain()
-        findNavController().navigate(action)
+//        val action = LoginFragmentDirections.loginToMain()
+//        findNavController().navigate(action)
+
+        findNavController().toMain()
+
     }
 
     private fun openRegister() {
         val action = LoginFragmentDirections.loginToRegister()
         findNavController().navigate(action)
+
+
     }
 
 }
