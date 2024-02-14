@@ -22,7 +22,7 @@ Hotels Mobile Application
 
 <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94" />
 
-<img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/3fe1d534-df37-4702-bfc7-c2a12c847a94" />
+<img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/622df88d-481a-4209-a6a3-48a65b44354e" />
 
 <img width="300rem" height="600rem" src="https://github.com/islamzadavusal/Hotels-Mobile-Application/assets/120246254/00c65cc8-c8f6-4b21-b2bd-62bacdca8a8f" />
 
