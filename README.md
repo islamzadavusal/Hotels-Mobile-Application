@@ -4,14 +4,14 @@ Hotels Mobile Application
 
 ## Technologies and Libraries
 
+- **Clean Android Architecture:** Utilized to organize the application into clean architecture layers including app, data, common, domain, features, network, and entities.
 - **MVVM:** Project structure using Model-View-ViewModel architecture.
-- **Firebase Auth:** User authentication using Firebase Authentication.
+- **Firebase Auth:** User authentication using Firebase Authentication. (Email & Password; Google, Facebook)
 - **Firestore:** Database operations using Firebase Firestore.
 - **LiveData:** Application updates made using LiveData to detect data changes.
 - **API - JSON:** Utilization of APIs in JSON format.
 - **Retrofit:** Retrofit library for HTTP requests.
 - **OkHttp:** OkHttp library for HTTP requests.
-- **Clean Android Architecture:** Utilized to organize the application into clean architecture layers including app, data, common, domain, features, network, and entities.
 - **Dependency Injection:** Hilt and Dagger used for dependency injection.
 
 ## Screenshots:
